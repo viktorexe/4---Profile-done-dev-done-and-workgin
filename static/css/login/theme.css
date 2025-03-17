@@ -1,0 +1,109 @@
+/* theme.css */
+/* Background Gradients */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-background);
+    transition: opacity var(--transition-normal);
+}
+
+.dark-theme::before {
+    background: linear-gradient(
+        130deg,
+        #1a1c3d 0%,
+        #1e293b 25%,
+        #242f45 50%,
+        #1e293b 75%,
+        #1a1c3d 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+}
+
+.light-theme::before {
+    background: linear-gradient(
+        130deg,
+        #e2e8f0 0%,
+        #f1f5f9 25%,
+        #ffffff 50%,
+        #f1f5f9 75%,
+        #e2e8f0 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+}
+
+/* Theme Specific Styles */
+.dark-theme {
+    color: var(--dark-text);
+}
+
+.light-theme {
+    color: var(--light-text);
+}
+
+/* Form Box Theme Styles */
+.form-box {
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all var(--transition-normal);
+}
+
+.dark-theme .form-box {
+    background: var(--dark-surface);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .form-box {
+    background: var(--light-surface);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.02),
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        0 0 0 1px rgba(255, 255, 255, 0.7),
+        0 0 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    z-index: var(--z-floating);
+}
+
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+}
+
+.dark-theme .theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffd700;
+}
+
+.light-theme .theme-toggle {
+    background: rgba(0, 0, 0, 0.05);
+    color: #5865f2;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}

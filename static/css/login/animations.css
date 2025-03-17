@@ -1,0 +1,108 @@
+/* animations.css */
+/* Background Gradient Animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Form Transitions */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Button Hover Animation */
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(88, 101, 242, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(88, 101, 242, 0.2);
+    }
+}
+
+/* Apply Animations */
+.form-box {
+    animation: scaleIn 0.5s ease forwards;
+}
+
+.form-section.active {
+    animation: slideIn 0.5s ease forwards;
+}
+
+.alert {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* Hover Effects */
+.submit-btn:hover {
+    animation: buttonGlow 2s infinite;
+}
+
+/* Transition Classes */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity var(--transition-normal);
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
